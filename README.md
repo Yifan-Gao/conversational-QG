@@ -24,14 +24,17 @@ coqg-train/dev/test-3.json: our train/dev/test data split
 
 coqg-coref-test-3.json: coreference test set
 
+
+Provide the avaialble GPUs in a comma delimeted list following the bash script command, e.g. `0,1`.  You can find your available GPUs by issuing `nvidia-smi`
+
 ### Preprocess
-run `scripts/preprocess.sh` for preprocessing.
+run `scripts/preprocess.sh 0,1` for preprocessing.
 
 GloVe vectors are required, please download [glove.840B.300d](http://nlp.stanford.edu/data/glove.840B.300d.zip) first.
 run `scripts/emb.sh` for getting corresponding word embedding.
 
 ### Train, Generate \& Evaluate
-run `scripts/train.sh` for training, `scripts/generate.sh` for generation and evaluation
+run `scripts/train.sh 0,1` for training, `scripts/generate.sh 0,1` for generation and evaluation
 
 ### Pretrained Model
 We have released our pretrained model [here](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155102332_link_cuhk_edu_hk/EQNpN00ivPNOm0LDMASZO7IBDrzzgeMDGZD9Z319GRQ76Q?e=82d2mr).
